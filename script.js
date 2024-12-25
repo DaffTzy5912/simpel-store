@@ -1,13 +1,13 @@
 const users = [
     {
     id: 'santa-01',
-    img: '',
+    img: 'https://img101.pixhost.to/images/78/546456982_than.jpg',
     userName: 'asisten wanz:'
   },
     {
     id: 'user-01',
     img: 'https://img.freepik.com/premium-vector/beautiful-sports-girl-character-avatar-with-long-black-hair_491904-70.jpg',
-    userName: 'Me'
+    userName: 'anda'
   }
 ]
 
