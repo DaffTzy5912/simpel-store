@@ -16,8 +16,9 @@
     <div class="container">
       <a class="navbar-brand" href="#">simpel storr</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <span class="navbar-toggler-icon"></span>
+</button>
+<button id="theme-toggle" class="btn btn-outline-light ms-3">🌙</button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
@@ -39,7 +40,7 @@
           <div class="card-body">
             <h5 class="card-title">Nokos Indo</h5>
             <p class="card-text">5.000</p>
-            <button class="btn btn-primary add-to-cart" data-name="Product 1" data-price="5.000">
+            <button class="btn btn-primary add-to-cart" data-name="Product 1" data-price="5">
               <i class="fas fa-cart-plus"></i> tambab keranjang
             </button>
           </div>
@@ -51,7 +52,7 @@
           <div class="card-body">
             <h5 class="card-title">Panel Bot</h5>
             <p class="card-text">1.000 - 8.000</p>
-            <button class="btn btn-primary add-to-cart" data-name="Product 2" data-price="1.000">
+            <button class="btn btn-primary add-to-cart" data-name="Product 2" data-price="1">
               <i class="fas fa-cart-plus"></i> tambah keranjang
             </button>
           </div>
@@ -117,20 +118,26 @@
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-  <script>
-      const checkoutButton = document.getElementById("checkout-button");
-      checkoutButton.addEventListener("click", () => {
-          const total = document.getElementById("cart-total").textContent;
-          if (parseFloat(total) === 0) {
-              Swal.fire("tidak ada produk untuk di Checkout", "Please add some products to your cart!", "warning");
-          } else {
-              Swal.fire("Success", `Your total is $${total}. Proceeding to payment...`, "success");
-          }
-      });
-  </script>
-  <script src="dapz.js"></script>
+<script>
+  AOS.init();
+</script>
+<script>
+  const themeToggle = document.getElementById('theme-toggle');
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    themeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+  });
+
+  const checkoutButton = document.getElementById("checkout-button");
+  checkoutButton.addEventListener("click", () => {
+      const total = document.getElementById("cart-total").textContent;
+      if (parseFloat(total) === 0) {
+          Swal.fire("tidak ada produk untuk di Checkout", "Please add some products to your cart!", "warning");
+      } else {
+          Swal.fire("Success", `Your total is $${total}. Proceeding to payment...`, "success");
+      }
+  });
+</script>
+<script src="dapz.js"></script>
 </body>
 </html>
