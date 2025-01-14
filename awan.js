@@ -39,6 +39,6 @@ document.getElementById("checkout-button").addEventListener("click", () => {
     .map((item) => `${item.name} (x${item.quantity}) - $${(item.price * item.quantity).toFixed(2)}`)
     .join("%0A");
   const total = document.getElementById("cart-total").textContent;
-  const whatsappLink = `https://wa.me/6289542567224?text=order%20produk:%0A${message}%0A%0ATotal:%20$${total}`;
+  const whatsappLink = `https://wa.me/6285736486023?text=order%20produk:%0A${message}%0A%0ATotal:%20$${total}`;
   window.open(whatsappLink, "_blank");
 });
